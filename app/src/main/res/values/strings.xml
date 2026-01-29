@@ -1,11 +1,16 @@
 <resources>
-    <string name="app_name">Project_1</string>
+    <string name="app_name">Project_!</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="home_welcome">Welcome to phone lookup </string>
+    <string name="login_button">Login</string>
+    <string name="search_hint">Search…</string>
+    <string name="phone_lookup_hint">Enter phone number</string>
+    <string name="submit_button">Submit</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
