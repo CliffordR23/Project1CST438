@@ -78,7 +78,7 @@
 
         <!-- Primary Login button centered under password -->
         <Button
-            android:id="@+id/loginBtn"
+            android:id="@+id/loginBttn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
@@ -96,7 +96,7 @@
             android:text="Don't have an account?"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/loginBtn"
+            app:layout_constraintTop_toBottomOf="@id/loginBttn"
             android:layout_marginTop="24dp" />
 
         <!-- Sign Up button right next to the signUpText -->

@@ -2,18 +2,22 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    android:fillViewport="true"
+    tools:context=".FirstFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <Button
-            android:id="@+id/button_second"
-            android:layout_width="wrap_content"
+        <!-- Title centered across the screen -->
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/previous"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,13 +35,49 @@
             app:layout_constraintTop_toBottomOf="@id/button_second" />
 
         <TextView
-            android:id="@+id/textview_second"
+            android:id="@+id/confirmPasswordTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Confirm Password:"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/emailText"
+            app:layout_constraintTop_toBottomOf="@id/passwordText" />
+
+        <!-- Confirm Password input (CONSTRAINED FIX) -->
+        <EditText
+            android:id="@+id/editTextTextPassword4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/confirmPasswordTxt"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/confirmPasswordTxt" />
+
+        <!-- Primary Sign Up button centered under confirm password -->
+        <Button
+            android:id="@+id/loginBttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:text="Sign Up"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextTextPassword4" />
+
+        <!-- Already have an account? -->
+        <TextView
+            android:id="@+id/signUpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Already have an account?"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button_login" />
     </androidx.constraintlayout.widget.ConstraintLayout>
