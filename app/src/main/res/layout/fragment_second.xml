@@ -2,34 +2,138 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    android:fillViewport="true"
+    tools:context=".FirstFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <Button
-            android:id="@+id/button_second"
-            android:layout_width="wrap_content"
+        <!-- Title centered across the screen -->
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/previous"
-            app:layout_constraintBottom_toTopOf="@id/textview_second"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Sign Up"
+            android:textSize="28sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Email label -->
         <TextView
-            android:id="@+id/textview_second"
+            android:id="@+id/emailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Email:"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginText" />
+
+        <!-- Email input -->
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/emailText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/emailText" />
+
+        <!-- Password label -->
+        <TextView
+            android:id="@+id/passwordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Password:"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/emailText"
+            app:layout_constraintTop_toBottomOf="@id/emailText" />
+
+        <!-- Password input -->
+        <EditText
+            android:id="@+id/editTextTextPassword2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/passwordText"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/passwordText" />
+
+        <!-- Confirm Password label -->
+        <TextView
+            android:id="@+id/confirmPasswordTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Confirm Password:"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/emailText"
+            app:layout_constraintTop_toBottomOf="@id/passwordText" />
+
+        <!-- Confirm Password input (CONSTRAINED FIX) -->
+        <EditText
+            android:id="@+id/editTextTextPassword4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/confirmPasswordTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/confirmPasswordTxt" />
+
+        <!-- Primary Sign Up button centered under confirm password -->
+        <Button
+            android:id="@+id/loginBttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:text="Sign Up"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_second" />
+            app:layout_constraintTop_toBottomOf="@id/editTextTextPassword4" />
+
+        <!-- Already have an account? -->
+        <TextView
+            android:id="@+id/signUpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Already have an account?"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginBttn" />
+
+        <!-- Login button next to text -->
+        <Button
+            android:id="@+id/signUpBttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Login"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/signUpText"
+            app:layout_constraintStart_toEndOf="@id/signUpText" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
