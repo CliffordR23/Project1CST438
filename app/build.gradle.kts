@@ -3,6 +3,11 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
+// Avoid duplicate classes between com.intellij:annotations and org.jetbrains:annotations
+configurations.all {
+    exclude(group = "com.intellij", module = "annotations")
+}
+
 android {
     namespace = "com.example.project_1"
     compileSdk = 36

@@ -7,13 +7,13 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class UserViewModel(application: Application): AndroidViewModel(application) {
+class AppViewModel(application: Application): AndroidViewModel(application) {
     private val selectAll: LiveData<List<User>>
-    private val repository: UserRepository
+    private val repository: AppRepository
 
     init {
-        val userDao = UserDatabase.getDatabase(application).userDao()
-        repository = UserRepository(userDao)
+        val userDao = AppDatabase.getDatabase(application).userDao()
+        repository = AppRepository(userDao)
         selectAll = repository.selectAll
     }
 
