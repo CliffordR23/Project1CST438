@@ -9,16 +9,16 @@ import androidx.room.Query
 import androidx.room.Update
 
 @Dao
-interface UserDao {
+interface SavedDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertUser(user: User)
+    suspend fun insertSaved(saved: Saved)
 
-    @Query("SELECT * FROM user WHERE userID = :userID")
-    fun selectUser(userID: Int): LiveData<User?>
+    @Query("SELECT * FROM saved WHERE userID = :userID")
+    fun selectUserSaved(userID: Int): LiveData<List<Saved>>
 
     @Update
-    suspend fun updateUser(user: User)
+    suspend fun updateSaved(saved: Saved)
 
     @Delete
-    suspend fun deleteUser(user: User)
+    suspend fun deleteSaved(saved: Saved)
 }

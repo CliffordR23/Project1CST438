@@ -9,16 +9,16 @@ import androidx.room.Query
 import androidx.room.Update
 
 @Dao
-interface UserDao {
+interface HistoryDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertUser(user: User)
+    suspend fun insertHistory(history: History)
 
-    @Query("SELECT * FROM user WHERE userID = :userID")
-    fun selectUser(userID: Int): LiveData<User?>
+    @Query("SELECT * FROM history WHERE userID = :userID")
+    fun selectUserHistory(userID: Int): LiveData<List<History>>
 
     @Update
-    suspend fun updateUser(user: User)
+    suspend fun updateHistory(history: History)
 
     @Delete
-    suspend fun deleteUser(user: User)
+    suspend fun deleteHistory(history: History)
 }

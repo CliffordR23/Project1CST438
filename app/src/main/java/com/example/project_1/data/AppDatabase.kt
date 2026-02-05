@@ -1,13 +1,15 @@
 package com.example.project_1.data
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
 import android.content.Context
+import androidx.room.Database
 import androidx.room.Room
+import androidx.room.RoomDatabase
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [User::class, History::class, Saved::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun userDao(): UserDao
+    abstract fun historyDao(): HistoryDao
+    abstract fun savedDao(): SavedDao
 
     companion object {
         @Volatile
