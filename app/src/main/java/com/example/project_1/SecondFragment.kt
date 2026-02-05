@@ -36,9 +36,9 @@ class SecondFragment : Fragment() {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
 
-        binding.buttonLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_HomeFragment)
-        }
+//        binding.signUpBttn.setOnClickListener {
+//            findNavController().navigate(R.id.action_SecondFragment_to_HomeFragment)
+//        }
     }
 
     override fun onDestroyView() {
