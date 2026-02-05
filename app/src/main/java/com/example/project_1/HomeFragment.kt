@@ -22,7 +22,32 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // You can add logic here for your home page
+
+        binding.buttonSubmit.setOnClickListener {
+            performPhoneLookup()
+        }
+    }
+
+    private fun performPhoneLookup() {
+        // Show loading state
+        setLoading(true)
+
+        // Mocking a long response (Replace with your actual API call)
+        binding.root.postDelayed({
+            // Hide loading state after response
+            setLoading(false)
+            
+            // Handle result here
+            binding.textviewHome.text = "Lookup complete!"
+        }, 2000) // 2 second delay
+    }
+
+    private fun setLoading(isLoading: Boolean) {
+        binding.loadingIndicator.visibility = if (isLoading) View.VISIBLE else View.GONE
+        
+        // Optionally disable input during loading
+        binding.buttonSubmit.isEnabled = !isLoading
+        binding.edittextPhoneLookup.isEnabled = !isLoading
     }
 
     override fun onDestroyView() {
