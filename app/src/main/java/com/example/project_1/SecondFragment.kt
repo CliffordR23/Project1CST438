@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.project_1.databinding.FragmentSecondBinding
-
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import com.example.project_1.data.AuthManager
 class SecondFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
@@ -34,23 +36,31 @@ class SecondFragment : Fragment() {
                 Toast.makeText(requireContext(), "Please fill out all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
             if (pass.length < 6) {
                 Toast.makeText(requireContext(), "Password must be at least 6 characters", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
             if (pass != confirm) {
                 Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val userId = LocalAuth.signUp(requireContext(), email, pass)
-            if (userId == null) {
-                Toast.makeText(requireContext(), "An account with this email already exists", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            lifecycleScope.launch {
+                val newUserId = AuthManager.signUp(requireContext(), email, pass)
+                if (newUserId == null) {
+                    Toast.makeText(
+                        requireContext(),
+                        "An account with this email already exists",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    findNavController().navigate(R.id.HomeFragment)
+                }
             }
-
-            findNavController().navigate(R.id.HomeFragment)
         }
+
 
         binding.signUpBttn.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
