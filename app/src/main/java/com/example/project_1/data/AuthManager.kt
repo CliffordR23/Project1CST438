@@ -54,6 +54,36 @@ object AuthManager {
 
         return@withContext user.userID
     }
+    suspend fun loginOrCreateFromGoogle(context: Context, email: String): Int =
+        withContext(Dispatchers.IO) {
+
+            val db = AppDatabase.getDatabase(context)
+            val userDao = db.userDao()
+            val normalizedEmail = email.trim().lowercase()
+
+            val existing = userDao.getUserByEmail(normalizedEmail)
+            val userId = if (existing != null) {
+                existing.userID
+            } else {
+                val rowId = userDao.insertUser(
+                    User(
+                        userID = 0,
+                        username = "",
+                        password = "",
+                        email = normalizedEmail
+                    )
+                )
+                rowId.toInt()
+            }
+
+            context.getSharedPreferences("auth_prefs", Context.MODE_PRIVATE)
+                .edit()
+                .putInt("current_user_id", userId)
+                .apply()
+
+            userId
+        }
+
 
     fun getCurrentUserId(context: Context): Int {
         return context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)

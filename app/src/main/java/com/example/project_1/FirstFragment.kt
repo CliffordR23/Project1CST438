@@ -109,14 +109,25 @@ class FirstFragment : Fragment() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    val user = auth.currentUser
-                    Log.d("AUTH", "Firebase sign-in OK: ${user?.email} uid=${user?.uid}")
-                    findNavController().navigate(R.id.HomeFragment)
+                    val firebaseUser = auth.currentUser
+                    val email = firebaseUser?.email
+
+                    if (email == null) {
+                        Toast.makeText(requireContext(), "Google account has no email", Toast.LENGTH_SHORT).show()
+                        return@addOnCompleteListener
+                    }
+
+                    lifecycleScope.launch {
+                        AuthManager.loginOrCreateFromGoogle(requireContext(), email)
+                        findNavController().navigate(R.id.HomeFragment)
+                    }
+
                 } else {
                     Log.e("AUTH", "Firebase sign-in FAILED", task.exception)
                 }
             }
     }
+
 
     override fun onStart() {
         super.onStart()
