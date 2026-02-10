@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.project_1.databinding.FragmentHomeBinding
+import com.google.firebase.auth.FirebaseAuth
+import androidx.navigation.fragment.findNavController
+
 
 class HomeFragment : Fragment() {
 
@@ -25,6 +28,20 @@ class HomeFragment : Fragment() {
 
         binding.buttonSubmit.setOnClickListener {
             performPhoneLookup()
+        }
+        binding.logoutBttn.setOnClickListener {
+
+            LocalAuth.logout(requireContext())
+
+            FirebaseAuth.getInstance().signOut()
+
+            findNavController().navigate(
+                R.id.FirstFragment,
+                null,
+                androidx.navigation.NavOptions.Builder()
+                    .setPopUpTo(R.id.FirstFragment, true)
+                    .build()
+            )
         }
     }
 
@@ -54,4 +71,5 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
