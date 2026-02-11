@@ -16,6 +16,7 @@ class SecondFragment : Fragment() {
     private var _binding: FragmentSecondBinding? = null
     private val binding get() = _binding!!
 
+    // builds view
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,13 +25,14 @@ class SecondFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.loginBttn.setOnClickListener {
             val email = binding.editTextTextEmailAddress.text.toString().trim()
-            val pass = binding.editTextTextPassword2.text.toString()
-            val confirm = binding.editTextTextPassword4.text.toString()
+            val pass = binding.editTextTextPassword2.text.toString().trim()
+            val confirm = binding.editTextTextPassword4.text.toString().trim()
 
             if (email.isBlank() || pass.isBlank() || confirm.isBlank()) {
                 Toast.makeText(requireContext(), "Please fill out all fields", Toast.LENGTH_SHORT).show()
@@ -47,6 +49,7 @@ class SecondFragment : Fragment() {
                 return@setOnClickListener
             }
 
+            // creates account or give en error if it already exists
             lifecycleScope.launch {
                 val newUserId = AuthManager.signUp(requireContext(), email, pass)
                 if (newUserId == null) {
