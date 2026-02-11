@@ -31,10 +31,8 @@ class HomeFragment : Fragment() {
 
         if (firebaseUser != null) {
             binding.textviewHome.text = "Signed in with Google: ${firebaseUser.email}"
-            // Optionally send firebaseUser.uid to remote DB
         } else if (localUserId != -1) {
             binding.textviewHome.text = "Signed in locally: id=$localUserId"
-            // Optionally send localUserId to your remote DB
         }
 
         binding.buttonSubmit.setOnClickListener {
