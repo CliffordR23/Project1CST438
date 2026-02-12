@@ -1,9 +1,18 @@
+
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
     id("com.google.devtools.ksp")
 }
+//val secretsFile = rootProject.file("secrets.properties")
+//val secrets = Properties()
+//
+//if (secretsFile.exists()) {
+//    secrets.load(secretsFile.inputStream())
+//}
 
 // Avoid duplicate classes between com.intellij:annotations and org.jetbrains:annotations
 configurations.all {
@@ -15,6 +24,11 @@ android {
     compileSdk = 36
 
     defaultConfig {
+//        buildConfigField(
+//            "String",
+//            "MY_API_KEY",
+//            "\"${secrets.getProperty("MY_API_KEY") ?: ""}\""
+//        )
         applicationId = "com.example.project_1"
         minSdk = 34
         targetSdk = 36
@@ -46,13 +60,18 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.gson)
+
     implementation(libs.androidx.activity)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
