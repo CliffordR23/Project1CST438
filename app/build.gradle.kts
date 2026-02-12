@@ -1,13 +1,27 @@
+
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 }
+//val secretsFile = rootProject.file("secrets.properties")
+//val secrets = Properties()
+//
+//if (secretsFile.exists()) {
+//    secrets.load(secretsFile.inputStream())
+//}
 
 android {
     namespace = "com.example.project_1"
     compileSdk = 36
 
     defaultConfig {
+//        buildConfigField(
+//            "String",
+//            "MY_API_KEY",
+//            "\"${secrets.getProperty("MY_API_KEY") ?: ""}\""
+//        )
         applicationId = "com.example.project_1"
         minSdk = 34
         targetSdk = 36
