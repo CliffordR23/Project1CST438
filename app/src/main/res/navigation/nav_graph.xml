@@ -45,6 +45,17 @@
         android:id="@+id/HomeFragment"
         android:name="com.example.project_1.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_SavedNumbersFragment"
+            app:destination="@id/SavedNumbersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SavedNumbersFragment"
+        android:name="com.example.project_1.SavedNumbersFragment"
+        android:label="Saved Numbers">
+    </fragment>
 
 </navigation>
