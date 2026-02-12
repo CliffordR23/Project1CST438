@@ -11,104 +11,139 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_root"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:padding="24dp">
 
-        <!-- Title centered across the screen -->
+        <!-- Title -->
         <TextView
             android:id="@+id/loginText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Login In"
+            android:text="@string/login_title"
             android:textSize="28sp"
             android:textStyle="bold"
             android:gravity="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="24dp" />
-
-        <!-- Email label -->
-        <TextView
-            android:id="@+id/emailText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email:"
-            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_label"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
             app:layout_constraintTop_toBottomOf="@id/loginText"
-            android:layout_marginTop="24dp" />
-
-        <!-- Email input (match constraints so it lines up) -->
-        <EditText
-            android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@id/emailText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBaseline_toBaselineOf="@id/emailText"
-            android:layout_marginStart="12dp" />
-
-        <!-- Password label -->
-        <TextView
-            android:id="@+id/passwordText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Password:"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/emailText"
-            app:layout_constraintTop_toBottomOf="@id/emailText"
-            android:layout_marginTop="16dp" />
-
-        <!-- Password input -->
-        <EditText
-            android:id="@+id/editTextTextPassword2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@id/passwordText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBaseline_toBaselineOf="@id/passwordText"
-            android:layout_marginStart="12dp" />
-
-        <!-- Primary Login button centered under password -->
-        <Button
-            android:id="@+id/loginBttn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextTextPassword2"
-            android:layout_marginTop="24dp" />
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- "Don't have an account?" text left-aligned under the button -->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/password_label"
+            android:layout_marginTop="12dp"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@id/emailLayout"
+            app:layout_constraintStart_toStartOf="@id/emailLayout"
+            app:layout_constraintEnd_toEndOf="@id/emailLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Log in (primary) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginBttn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/login_button_text"
+            android:layout_marginTop="18dp"
+            app:cornerRadius="16dp"
+            app:layout_constraintTop_toBottomOf="@id/passwordLayout"
+            app:layout_constraintStart_toStartOf="@id/emailLayout"
+            app:layout_constraintEnd_toEndOf="@id/emailLayout" />
+
+        <!-- Divider: OR -->
+        <TextView
+            android:id="@+id/orText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/or_text"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:alpha="0.6"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@id/loginBttn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Continue with Google (outlined) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGoogleSignIn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/continue_with_google"
+            android:layout_marginTop="14dp"
+            app:cornerRadius="16dp"
+            app:layout_constraintTop_toBottomOf="@id/orText"
+            app:layout_constraintStart_toStartOf="@id/emailLayout"
+            app:layout_constraintEnd_toEndOf="@id/emailLayout" />
+
+        <!-- Centered signup row -->
         <TextView
             android:id="@+id/signUpText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account?"
-            android:textSize="16sp"
+            android:text="@string/no_account_text"
+            android:textSize="14sp"
+            android:alpha="0.75"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintTop_toBottomOf="@id/btnGoogleSignIn"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/loginBttn"
-            android:layout_marginTop="24dp" />
+            app:layout_constraintEnd_toStartOf="@id/signUpBttn"
+            app:layout_constraintHorizontal_chainStyle="packed" />
 
-        <!-- Sign Up button right next to the signUpText -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/signUpBttn"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@id/signUpText"
+            android:text="@string/sign_up_button_text"
+            android:minHeight="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
             app:layout_constraintBaseline_toBaselineOf="@id/signUpText"
-            android:layout_marginStart="12dp" />
+            app:layout_constraintStart_toEndOf="@id/signUpText"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
