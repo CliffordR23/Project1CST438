@@ -11,7 +11,10 @@ import androidx.room.Update
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertUser(user: User)
+    suspend fun insertUser(user: User): Long
+
+    @Query("SELECT * FROM user WHERE email = :email LIMIT 1")
+    suspend fun getUserByEmail(email: String): User?
 
     @Query("SELECT * FROM user WHERE userID = :userID")
     fun selectUser(userID: Int): LiveData<User?>

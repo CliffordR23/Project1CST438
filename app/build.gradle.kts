@@ -4,6 +4,8 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
+    id("com.google.devtools.ksp")
 }
 //val secretsFile = rootProject.file("secrets.properties")
 //val secrets = Properties()
@@ -78,5 +80,9 @@ dependencies {
     // ROOM DATABASE DEPENDENCIES
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.compiler)
+    ksp(libs.androidx.room.compiler)
+
+    implementation(platform("com.google.firebase:firebase-bom:34.9.0"))
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
 }
