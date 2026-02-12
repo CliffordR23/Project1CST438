@@ -26,6 +26,7 @@ fun SavedNumbersScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
+        Spacer(modifier = Modifier.height(24.dp))
 
         // Back button
         Button(
