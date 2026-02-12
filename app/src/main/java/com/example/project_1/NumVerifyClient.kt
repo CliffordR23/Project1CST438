@@ -27,7 +27,7 @@ interface NumVerifyService {
 }
 
 object NumVerifyClient {
-    private const val BASE_URL = "http://apilayer.net/"
+    private const val BASE_URL = "https://apilayer.net/"
 
     val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
