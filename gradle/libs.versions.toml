@@ -1,5 +1,6 @@
 [versions]
 agp = "8.13.2"
+composeBom = "2026.02.00"
 kotlin = "2.1.0"
 coreKtx = "1.17.0"
 junit = "4.13.2"
@@ -16,10 +17,16 @@ activity = "1.12.2"
 roomRuntime = "2.8.4"
 
 [libraries]
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+androidx-compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-material3 = { module = "androidx.compose.material3:material3" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+androidx-ui = { module = "androidx.compose.ui:ui" }
+androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -36,4 +43,5 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 google-services = { id = "com.google.gms.google-services", version = "4.4.4" }

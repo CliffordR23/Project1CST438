@@ -69,9 +69,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
+
     <Button
         android:id="@+id/logoutBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/log_out" />
+        android:text="@string/log_out"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="644dp" />
+
+    <Button
+        android:id="@+id/buttonViewSaved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saved"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="644dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

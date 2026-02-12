@@ -56,6 +56,9 @@ class HomeFragment : Fragment() {
                 Toast.makeText(context, "Please enter a phone number", Toast.LENGTH_SHORT).show()
             }
         }
+        binding.buttonViewSaved.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_SavedNumbersFragment)
+        }
         binding.logoutBttn.setOnClickListener {
             val ctx = context ?: return@setOnClickListener
 
