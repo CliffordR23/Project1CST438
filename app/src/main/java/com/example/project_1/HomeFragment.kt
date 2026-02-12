@@ -1,16 +1,22 @@
 package com.example.project_1
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.example.project_1.databinding.FragmentHomeBinding
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    private val ACCESS_KEY = "2d63b1eea74b9e6c3f951c40ab6b3221"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,28 +30,44 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonSubmit.setOnClickListener {
-            performPhoneLookup()
+            val phoneNumber = binding.edittextPhoneLookup.text.toString()
+            if (phoneNumber.isNotEmpty()) {
+                performPhoneLookup(phoneNumber)
+            } else {
+                Toast.makeText(context, "Please enter a phone number", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
-    private fun performPhoneLookup() {
-        // Show loading state
+    private fun performPhoneLookup(phoneNumber: String) {
         setLoading(true)
 
-        // Mocking a long response (Replace with your actual API call)
-        binding.root.postDelayed({
-            // Hide loading state after response
-            setLoading(false)
-            
-            // Handle result here
-            binding.textviewHome.text = "Lookup complete!"
-        }, 2000) // 2 second delay
+        lifecycleScope.launch {
+            try {
+                val response = NumVerifyClient.service.verifyPhoneNumber(ACCESS_KEY, phoneNumber)
+                setLoading(false)
+
+                if (response.valid) {
+                    val intent = Intent(requireContext(), VerificationActivity::class.java).apply {
+                        putExtra("number", response.number)
+                        putExtra("valid", response.valid)
+                        putExtra("country", response.country_name)
+                        putExtra("location", response.location)
+                        putExtra("carrier", response.carrier)
+                    }
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(context, "Unsuccessful: Invalid phone number", Toast.LENGTH_LONG).show()
+                }
+            } catch (e: Exception) {
+                setLoading(false)
+                Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     private fun setLoading(isLoading: Boolean) {
         binding.loadingIndicator.visibility = if (isLoading) View.VISIBLE else View.GONE
-        
-        // Optionally disable input during loading
         binding.buttonSubmit.isEnabled = !isLoading
         binding.edittextPhoneLookup.isEnabled = !isLoading
     }
