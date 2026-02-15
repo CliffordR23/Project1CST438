@@ -46,6 +46,7 @@ class AuthUnitTests {
 
     @Test
     fun signUpDup() = runBlocking {
+        // tests if trying to sign up with the same email
         val first = AuthManager.signUp(ctx, "test@example.com", "password123")
         assertNotNull(first)
 
