@@ -30,5 +30,8 @@ abstract class AppDatabase: RoomDatabase() {
                 return instance
             }
         }
+        fun resetForTests() {
+            INSTANCE = null
+        }
     }
 }
