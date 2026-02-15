@@ -374,4 +374,4 @@ obj/
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,intellij,kotlin,gradle,androidstudio
-/app/
+# /app/ <-- this line didnt allow for tests to be comitted and pushed
