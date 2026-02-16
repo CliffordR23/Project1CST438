@@ -32,4 +32,7 @@
     <string name="logout">Log out</string>
     <string name="lookup_error">Lookup failed</string>
     <string name="lookup_complete">Lookup complete!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_landing_page_test">LandingPageTest</string>
 </resources>
