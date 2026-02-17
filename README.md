@@ -52,7 +52,27 @@ Carol mostly worked on getting the app to run faster, better, and higher.  She d
   + I would get the ROOM database setup FIRST
 + What is the most valuable thing you learned?
   + Do the work early and document EVERYTHING
+ 
 
+### Clifford Rodriguez
+1.  pull requests are [here] (https://github.com/CliffordR23/Project1CST438/pulls?q=is%3Apr+author%3ACliffordR23+is%3Aclosed)
+2.  Github issues are [here] (https://github.com/CliffordR23/Project1CST438/issues?q=is%3Aissue%20state%3Aopen%20author%3ACliffordR23)
+
+#### What was your role / which stories did you work on
+I mainly worked on creating the verificatino page and routing of API to recive phone number information provided upon look up
+
++ What was the biggest challenge? 
+  + Managing PR's and merges as well as momentous development
++ Why was it a challenge?
+  + there was not alot of familiarity with Github across the group and I strugged with creating momentum in my code and efficient development
+  + How was the challenge addressed?
+  + I communicated with my group and tried to submit work that would allow contributions across said group.
++ Favorite / most interesting part of this project
+  + Getting the api to work and seeing my phone number informatino in App form
++ If you could do it over, what would you change?
+  + Be more proactive and do this read me FIRST
++ What is the most valuable thing you learned?
+  + How to navigate github issues and resolve conflicts
 
 ## Conclusion
 
