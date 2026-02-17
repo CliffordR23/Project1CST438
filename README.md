@@ -1,20 +1,22 @@
-# Project 01 Retrospective and overview
+# Project 01 Phone Lookup
 
-[Video Walkthrough](https://www.youtube.com/watch?v=o-YBDTqX_ZU) 
-<!-- Ads have really ruined rick-rolling. -->
-[Github Repo](https://github.com/dclinkenbeard/MyDemoApplication)
+[Video Walkthrough]
+
+[Github Repo] https://github.com/CliffordR23/Project1CST438 
 
 ## Overview
-This is a sports betting assitant that makes use of an API we found [here](https://github.com/public-apis/public-apis?tab=readme-ov-file).
+This is a phone lookup app that makes use of an API we found [here](https://github.com/public-apis/public-apis?tab=readme-ov-file).
 
 We got styling help for this document from [this guide](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 ## Introduction
 
 * How was communication managed
+  * A slack channel where updates and PR notifications were commumcated across the whole group to promote effective workflows and product development. 
 * How many stories/issues were initially considered
+   * 14
 * How many stories/issues were completed
-
+  * 3
 ## Team Retrospective
 
 ### Team Member name
@@ -55,6 +57,8 @@ Carol mostly worked on getting the app to run faster, better, and higher.  She d
 ## Conclusion
 
 - How successful was the project?
-  - Think in terms of what did you set out to do and what actually got done?
+  - The project was extremley successful we grew experience in Github UI and development, communication and remidiation strategies, group programming development. API, Database, Auth development.
 - What was the largest victory?
+  - Overcoming Dev branch issues
 - Final assessment of the project
+  - Overall we learned how to overcome challennges, learn Git and Github, and Android studio.
