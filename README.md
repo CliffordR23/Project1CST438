@@ -93,6 +93,26 @@ I mainly worked on creating the verificatino page and routing of API to recive p
 + What is the most valuable thing you learned?
   + How to navigate github issues and resolve conflicts
 
+### Dima Krayilo
+1. Dima's pull requests are [here](https://github.com/CliffordR23/Project1CST438/pulls?q=is%3Apr+is%3Aclosed+author%3Abmo-crayola)
+1. Dima's Github issues are [here](https://github.com/CliffordR23/Project1CST438/issues?q=is%3Aissue%20state%3Aclosed%20author%3Abmo-crayola)
+
+#### What was your role / which stories did you work on
+I worked on the landing page, the history page, trying to merge as much xml to compose as possible, and fixing the navigation
+
++ What was the biggest challenge?
+  + Moving our xml inflated views to compose
++ Why was it a challenge?
+  + We didn't read the directions closely enough, and made basically the entire project using xml, and I wasn't able to fix our oauth pages to use compose
+  + How was the challenge addressed?
+  + We found out about this issue on Tuesday, I spoke to Dr. C. who recommended to use AI to move all the ui bits to compose, but I failed to use it well enough to make oauth and the api work
++ Favorite / most interesting part of this project
+  + I enjoyed figuring out conceptually how composeable ui works, and I liked working on a page that pulls data from a database rather than being responsible for the database
++ If you could do it over, what would you change?
+  + I would make sure our group has mock data in the DB as early as possible to let me have testable data
++ What is the most valuable thing you learned?
+  + Using an AuthManager rather than passing around a userId between activities made keeping track of the user significantly cleaner, and this is something I will use in the future
+
 ## Conclusion
 
 - How successful was the project?
