@@ -52,7 +52,26 @@ Carol mostly worked on getting the app to run faster, better, and higher.  She d
   + I would get the ROOM database setup FIRST
 + What is the most valuable thing you learned?
   + Do the work early and document EVERYTHING
- 
+
+### Ruben Rivera
+1.  pull requests are [here] (https://github.com/CliffordR23/Project1CST438/issues?q=is%3Apr%20author%3A%40me)
+2.  Github issues are [here] (https://github.com/CliffordR23/Project1CST438/issues?q=is%3Aissue%20author%3A%40me)
+
+#### What was your role / which stories did you work on
+I worked on the whole login/sign up pages both front end and back end. I also implemented Oauth, local auth, and junit tests.
+
++ What was the biggest challenge? 
+  + Implementing Oauth took a long time, but the biggest challenge was when I messed up the repo.
++ Why was it a challenge?
+  + It messed up everyones dev so we had roll back the commits to a working dev.
++ How was the challenge addressed?
+  + We all communicated and deciding rolling back and losing just my changes was the way to go, and I had the code saved so it all worked out.
++ Favorite / most interesting part of this project
+  + Making the UI I enjoyed a lot.
++ If you could do it over, what would you change?
+  + Start testing sooner, i waited too long to start testing my features and ended up having to debug a lot of it.
++ What is the most valuable thing you learned?
+  + How to work as a team and communicate more efficently.
 
 ### Clifford Rodriguez
 1.  pull requests are [here](https://github.com/CliffordR23/Project1CST438/pulls?q=is%3Apr+author%3ACliffordR23+is%3Aclosed)
