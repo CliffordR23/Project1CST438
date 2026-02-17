@@ -2,7 +2,7 @@
 
 [Video Walkthrough]
 
-[Github Repo] https://github.com/CliffordR23/Project1CST438 
+[Github Repo] [here](https://github.com/CliffordR23/Project1CST438)
 
 ## Overview
 This is a phone lookup app that makes use of an API we found [here](https://github.com/public-apis/public-apis?tab=readme-ov-file).
@@ -55,8 +55,8 @@ Carol mostly worked on getting the app to run faster, better, and higher.  She d
  
 
 ### Clifford Rodriguez
-1.  pull requests are [here] (https://github.com/CliffordR23/Project1CST438/pulls?q=is%3Apr+author%3ACliffordR23+is%3Aclosed)
-2.  Github issues are [here] (https://github.com/CliffordR23/Project1CST438/issues?q=is%3Aissue%20state%3Aopen%20author%3ACliffordR23)
+1.  pull requests are [here](https://github.com/CliffordR23/Project1CST438/pulls?q=is%3Apr+author%3ACliffordR23+is%3Aclosed)
+2.  Github issues are [here](https://github.com/CliffordR23/Project1CST438/issues?q=is%3Aissue%20state%3Aopen%20author%3ACliffordR23)
 
 #### What was your role / which stories did you work on
 I mainly worked on creating the verificatino page and routing of API to recive phone number information provided upon look up
