@@ -23,6 +23,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.fragment.findNavController
+import com.example.project_1.data.AuthManager
+import com.google.firebase.auth.FirebaseAuth
 
 class LandingFragment : Fragment() {
 
@@ -42,11 +44,23 @@ class LandingFragment : Fragment() {
                             findNavController().navigate(R.id.action_LandingFragment_to_HomeFragment)
                         },
                         onSearchHistory = {
+                            findNavController().navigate(R.id.action_LandingFragment_to_HistoryFragment)
                         },
                         onSavedNumbers = {
-                            // findNavController().navigate(R.id.action_LandingFragment_to_SavedNumbersFragment)
+                            findNavController().navigate(R.id.action_LandingFragment_to_SavedFragment)
                         },
-                        onEditAccount = {
+                        onLogout = {
+                            val context = requireContext();
+                            AuthManager.logout(context);
+                            FirebaseAuth.getInstance().signOut()
+
+                            findNavController().navigate(
+                                R.id.FirstFragment,
+                                null,
+                                androidx.navigation.NavOptions.Builder()
+                                    .setPopUpTo(R.id.LandingFragment, true)
+                                    .build()
+                            )
                         }
                     )
                 }
@@ -59,7 +73,7 @@ class LandingFragment : Fragment() {
         onPhoneLookup: () -> Unit,
         onSearchHistory: () -> Unit,
         onSavedNumbers: () -> Unit,
-        onEditAccount: () -> Unit
+        onLogout: () -> Unit
     ) {
         Column(
             modifier = Modifier
@@ -84,7 +98,7 @@ class LandingFragment : Fragment() {
             Button(onClick = onSavedNumbers) { Text("Saved Numbers") }
             Spacer(Modifier.height(24.dp))
 
-            Button(onClick = onEditAccount) { Text("Edit Account") }
+            Button(onClick = onLogout) { Text("Sign Out") }
         }
     }
 
@@ -96,7 +110,7 @@ class LandingFragment : Fragment() {
                 onPhoneLookup = {},
                 onSearchHistory = {},
                 onSavedNumbers = {},
-                onEditAccount = {}
+                onLogout = {}
             )
         }
     }
