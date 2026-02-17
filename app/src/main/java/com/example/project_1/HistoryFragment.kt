@@ -49,7 +49,7 @@ class HistoryFragment : Fragment() {
                             userId = userId,
                             history = history,
                             onDelete = { viewModel.deleteHistory(it) },
-                            onBack = { findNavController().navigateUp() }
+                            onBack = { findNavController().navigate(R.id.LandingFragment) }
                         )
                     }
                 }
