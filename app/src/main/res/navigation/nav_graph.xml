@@ -18,7 +18,7 @@
         <!-- Go to home and remove login from back stack -->
         <action
             android:id="@+id/action_FirstFragment_to_HomeFragment"
-            app:destination="@id/HomeFragment"
+            app:destination="@id/LandingFragment"
             app:popUpTo="@id/FirstFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -36,9 +36,33 @@
         <!-- Go to home and remove login from back stack too -->
         <action
             android:id="@+id/action_SecondFragment_to_HomeFragment"
-            app:destination="@id/HomeFragment"
+            app:destination="@id/LandingFragment"
             app:popUpTo="@id/FirstFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/LandingFragment"
+        android:name="com.example.project_1.LandingFragment"
+        android:label="Landing">
+
+        <action
+            android:id="@+id/action_LandingFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment"
+            app:popUpTo="@id/LandingFragment"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_LandingFragment_to_HistoryFragment"
+            app:destination="@id/HistoryFragment"
+            app:popUpTo="@id/LandingFragment"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_LandingFragment_to_SavedFragment"
+            app:destination="@id/SavedNumbersFragment"
+            app:popUpTo="@id/LandingFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -50,6 +74,18 @@
         <action
             android:id="@+id/action_HomeFragment_to_SavedNumbersFragment"
             app:destination="@id/SavedNumbersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/HistoryFragment"
+        android:name="com.example.project_1.HistoryFragment"
+        android:label="History">
+
+        <action
+            android:id="@+id/action_HistoryFragment_to_LandingFragment"
+            app:destination="@id/LandingFragment"
+            app:popUpTo="@id/HistoryFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
