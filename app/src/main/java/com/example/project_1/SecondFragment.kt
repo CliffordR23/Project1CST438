@@ -59,7 +59,7 @@ class SecondFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {
-                    findNavController().navigate(R.id.HomeFragment)
+                    findNavController().navigate(R.id.action_SecondFragment_to_LandingFragment)
                 }
             }
         }

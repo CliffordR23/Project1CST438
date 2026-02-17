@@ -27,7 +27,7 @@ class SavedNumbersFragment : Fragment() {
                 SavedNumbersScreen(
                     viewModel = viewModel,
                     userId = userId,
-                    onBack = { findNavController().navigateUp() }
+                    onBack = { findNavController().navigate(R.id.LandingFragment) }
                 )
             }
         }

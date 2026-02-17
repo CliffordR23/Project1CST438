@@ -17,7 +17,7 @@
 
         <!-- Go to home and remove login from back stack -->
         <action
-            android:id="@+id/action_FirstFragment_to_HomeFragment"
+            android:id="@+id/action_FirstFragment_to_LandingFragment"
             app:destination="@id/LandingFragment"
             app:popUpTo="@id/FirstFragment"
             app:popUpToInclusive="true" />
@@ -35,7 +35,7 @@
 
         <!-- Go to home and remove login from back stack too -->
         <action
-            android:id="@+id/action_SecondFragment_to_HomeFragment"
+            android:id="@+id/action_SecondFragment_to_LandingFragment"
             app:destination="@id/LandingFragment"
             app:popUpTo="@id/FirstFragment"
             app:popUpToInclusive="true" />
@@ -74,6 +74,12 @@
         <action
             android:id="@+id/action_HomeFragment_to_SavedNumbersFragment"
             app:destination="@id/SavedNumbersFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_LandingFragment"
+            app:destination="@id/LandingFragment"
+            app:popUpTo="@id/HomeFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment

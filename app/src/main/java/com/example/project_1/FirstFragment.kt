@@ -43,7 +43,7 @@ class FirstFragment : Fragment() {
         if (currentId != R.id.FirstFragment && currentId != R.id.SecondFragment) return
 
         navigated = true
-        navController.navigate(R.id.action_FirstFragment_to_HomeFragment)
+        navController.navigate(R.id.action_FirstFragment_to_LandingFragment)
     }
 
     // Google sign in result handler

@@ -57,7 +57,7 @@ class HomeFragment : Fragment() {
             }
         }
         binding.buttonViewSaved.setOnClickListener {
-            findNavController().navigate(R.id.action_HomeFragment_to_SavedNumbersFragment)
+            findNavController().navigate(R.id.action_HomeFragment_to_LandingFragment)
         }
         binding.logoutBttn.setOnClickListener {
             val ctx = context ?: return@setOnClickListener
