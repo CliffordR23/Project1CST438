@@ -28,16 +28,6 @@ fun SavedNumbersScreen(
     ) {
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Back button
-        Button(
-            onClick = onBack,
-            modifier = Modifier.align(Alignment.Start)
-        ) {
-            Text("Back")
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
         Text(
             text = "Saved Phone Numbers",
             style = MaterialTheme.typography.headlineSmall
@@ -73,6 +63,15 @@ fun SavedNumbersScreen(
                     }
                 }
             }
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Back button
+        Button(
+            onClick = onBack,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        ) {
+            Text("Back")
         }
     }
 }
