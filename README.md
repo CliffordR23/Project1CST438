@@ -74,6 +74,65 @@ I mainly worked on creating the verificatino page and routing of API to recive p
 + What is the most valuable thing you learned?
   + How to navigate github issues and resolve conflicts
 
+### Angel Valdez
+
+- a link to your [pull requests](https://github.com/CliffordR23/Project1CST438/pulls?q=is%3Apr+author%3AAngel-Valdez+is%3Aclosed)
+- a link to your [issues](https://github.com/CliffordR23/Project1CST438/issues?q=is%3Aissue%20state%3Aopen%20assignee%3AAngel-Valdez%20author%3AAngel-Valdez)
+
+#### What was your role / which stories did you work on
+I designed and implemented the database. I worked on the App Database, Repository & View Model. I created the User, History & Saved DAOs. I also worked on the Saved Phone Numbers page.
+
++ What was the biggest challenge? 
+  + Getting the database to not crash and Composable UI.
++ Why was it a challenge?
+  + There were classes with the same name conflicting with each other, and I had to hard code Kotlin compatibility. I went to office hours to get help from the T.A.
++ Favorite / most interesting part of this project?
+  + Wrapping my head around Kotlin and Room Database was a challenge, but a satisfying one to conquer.
++ If you could do it over, what would you change?
+  + To start with composable U.I. and to hard code dummy data into the database.
++ What is the most valuable thing you learned?
+  + How GitHub and pull requests work. I lost most of my fear for merging code.
+
+### DATABASE DOCUMENTATION
+
+User:
+- userID [primary key]
+- email
+- password
+
+History:
+- historyID [primary key]
+- userID [foreign key]
+- phoneNumber
+- date
+- time
+
+Saved:
+- phoneNumber [primary key]
+- userID [foreign key]
+
+User DAO:
+- INSERT, DELETE & UPDATE using user class
+- SELECT returns all info from user
+
+History DAO:
+- INSERT, DELETE & UPDATE using history class
+- SELECT returns all history using a userID
+
+Saved DAO:
+- INSERT, DELETE & UPDATE using saved class
+- SELECT returns all saved using a userID
+
+AppDatabase:
+- Creates database if one hasn't been created already.
+
+AppRepository:
+- Abstracts the C.R.U.D. functions for each table of the database.
+
+AppViewModel:
+- Communicates the C.R.U.D. functions with the U.I.
+
+
 ## Conclusion
 
 - How successful was the project?
