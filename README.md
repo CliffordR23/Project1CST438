@@ -54,8 +54,8 @@ Carol mostly worked on getting the app to run faster, better, and higher.  She d
   + Do the work early and document EVERYTHING
 
 ### Ruben Rivera
-1.  pull requests are [here] (https://github.com/CliffordR23/Project1CST438/issues?q=is%3Apr%20author%3A%40me)
-2.  Github issues are [here] (https://github.com/CliffordR23/Project1CST438/issues?q=is%3Aissue%20author%3A%40me)
+1.  Pull requests are [here](https://github.com/CliffordR23/Project1CST438/issues?q=is%3Apr%20author%3A%40me)
+2.  Github issues are [here](https://github.com/CliffordR23/Project1CST438/issues?q=is%3Aissue%20author%3A%40me)
 
 #### What was your role / which stories did you work on
 I worked on the whole login/sign up pages both front end and back end. I also implemented Oauth, local auth, and junit tests.
