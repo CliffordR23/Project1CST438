@@ -7,12 +7,14 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+/.idea/deploymentTargetSelector.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+secrets.properties
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,intellij,kotlin,gradle,androidstudio
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,intellij,kotlin,gradle,androidstudio
@@ -372,3 +374,4 @@ obj/
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,intellij,kotlin,gradle,androidstudio
+# /app/ <-- this line didnt allow for tests to be comitted and pushed
